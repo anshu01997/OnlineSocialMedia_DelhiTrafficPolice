@@ -1,0 +1,15 @@
+.navbar{
+	border: 0px;
+}
+
+.navbar-header{
+	font-family: 'Averia Libre', cursive;
+	font-size: 34px;
+	color: white;
+}
+
+.navbar-collapse{
+	font-family: 'Averia Libre', cursive;
+	font-size: 22px;
+	color: white;
+}

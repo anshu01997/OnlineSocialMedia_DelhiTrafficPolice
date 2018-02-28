@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Projection by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+
+<html>
+<style type="text/css">
+nav#nav, #header {
+    text-align: initial;
+}
+#header { text-align: left !important; }
+#navPanel { left: 0; }
+
+.col-sm-3.col-md-3.pull-right {
+    padding-top: 5px !important;
+}
+
+td.datecol {
+    width: 8%;
+}
+td.dptcol {
+    width: 17%;
+}
+td.respcol {
+    width: 28%;
+}
+</style>
+	<head>
+		<title>Twitter</title>
+		<meta charset="utf-8" />
+		{% load staticfiles %}
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/static/myapp/css/main.css" />
+	</head>
+	<body class="subpage" >
+	
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+				
+				     <div class="col-sm-3 col-md-3 pull-right">
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="button special icon fa-search" placeholder="Search" name="srch-term" id="srch-term">
+        </form>
+        
+
+
+
+
+        </div>
+        </div>
+					
+					<nav id="nav">
+						<a href="/myapp/home/">Home</a>
+						<a href="/myapp/branches/">Branches</a> 
+						 <!-- dropdown in nav bar -->
+						 
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+				<div class="logo"><img src="/static/myapp/images/logo.png"></div>  
+									<header class="align-center">
+						<h2>Recent tweets</h2>
+					
+					</header>
+							
+	
+	
+									<div class="table-wrapper">
+
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Date</th>
+													<th>Time</th>
+													<th>Tweet</th>
+													<th>Branch</th>
+													<th>Reply</th>
+													<th></th>
+												</tr>
+											</thead>
+											<tbody>
+											{% for result in results %}
+												<tr>
+													<td class="datecol"> {{ result.date }}</td>
+													<td class="timecol">{{result.time}}</td>
+													<td class="tweetcol">{%if result.extended_tweet.full_text %}
+															{{result.extended_tweet.full_text}}
+														{%else%}
+															{{result.text   }}
+				
+														{%endif%}
+														</td>
+   									 		       <td class="dptcol">
+   									 		       <div class="12u$">
+   									 		       <div id="drop" >
+												<div class="select-wrapper">
+													<select name="demo-category" id="demo-category" onchange="visible(this.value)">
+														<option value="">- Select -</option>
+														<option value="semi">Semi Control</option>
+            											<option value="signal">Traffic Signal</option>
+            											<option value="prosecution">Prosecution/Notice Branch</option>
+            											<option value="civic">Civic</option>
+            											<option value="piu">PIU</option>
+            											<option value="dcp">DCP ranges</option>
+													    <option value="dcp]"> ACP district/DCP district</option>
+
+													</select>
+												</div>
+												</div>
+
+												<!-- DCP ranges dropdown -->
+
+
+												<div id="hide" style="display: none;">
+												<div class="select-wrapper">
+												<select name="demo-category" id="demo-category">
+													<option value="">- Select -</option>
+														<option value="semi">Semi Control</option>
+            											<option value="signal">Traffic Signal</option>
+            											<option value="prosecution">Prosecution/Notice Branch</option>
+            											<option value="civic">Civic</option>
+            											<option value="piu">PIU</option>
+            											<option value="civic">DCP ranges/ACP district/DCP district</option>
+													</select>
+												</div>
+												</div>
+
+											</div>
+											</td>
+													<td class="respcol">
+														<!-- <form method="post" action="#">
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Write a response" /> -->
+												<form action="#" method="post">
+
+												<div class="field half fixed">
+													<input name="name" id="name" type="text" placeholder="Write a response" size="45">
+												</div>
+																		
+												</form>
+																
+													</td>
+													<td>
+													<form>
+														<button class="button button1" name="submit">OK
+													</form>
+													</td>
+												</tr>
+												{% endfor %}
+												
+											</tbody>
+										</table>
+									</div>
+
+							</div>
+							
+
+								
+
+		<!-- Scripts -->
+
+			<script type="text/javascript">
+			
+					function visible(val) 
+					{
+						if (val=='dcp') {
+        				document.getElementById("hidden").innerHTML.style.display="td";
+						}
+					}
+    				
+        		
+        	
+</script>
+
+			<script src="/static/myapp/js/jquery.min.js"></script>
+			<script src="/static/myapp/js/skel.min.js"></script>
+			<script src="/static/myapp/js/util.js"></script>
+			<script src="/static/myapp/js/main.js"></script>
+
+			
+</html>

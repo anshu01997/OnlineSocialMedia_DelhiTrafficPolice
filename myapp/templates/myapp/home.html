@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Home</title>
+		<meta charset="utf-8" />
+		{% load staticfiles %}
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="stylesheet" type="text/css" href="/static/myapp/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<div class="logo"><img src="/static/myapp/images/logo.png"></div>
+					<nav id="nav">
+						<a href="/myapp/home/">Home</a>
+						<a href="/myapp/view_notifications/">View notifications</a>
+						<a href="/myapp/branches/">Branches</a>
+						<a href="/myapp/analysis/">View Analysis</a>
+					
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<header>
+						<h1>Delhi Traffic Police- Social Media</h1>
+					</header>
+						<div class="flex ">
+
+						<div>
+							<span class="icon fa-facebook"></span>
+							<h3>FACEBOOK</h3>
+							<p>Work with Facebook posts</p>
+							<footer>
+								<a href="/myapp/facebook/" class="button">Enter</a>
+							</footer>
+						
+							
+						</div>
+
+						<div>
+							<span class="icon fa-twitter"></span>
+							<h3>TWITTER</h3>
+							<p>Work with tweets from Twitter</p>
+							<footer>
+								<a href="/myapp/twitter/" class="button">Enter</a>
+							</footer>
+						
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+			<!-- Social Media -->
+
+			<!-- <section id="three" class="wrapper align-center">
+				<div class="inner">
+					<div class="flex flex-2"> -->
+
+					<!-- TWITTER -->
+						<!-- <article>
+							<div class="image 1">
+								<img src="/static/myapp/images/twitter_logo.png" alt="twitter_logo"  height="230px" />
+							</div>
+							<header>
+			
+								<h3>Twitter</h3>
+							</header>
+						
+							<footer>
+								<a href="/myapp/twitter/" class="button">Enter</a>
+							</footer>
+						</article> -->
+
+						<!--FACEBOOK -->
+						<!-- <article>
+							<div class="image round">
+								<img src="/static/myapp/images/facebook_logo.png" alt="facebook_logo" />
+							</div>
+							<header>
+								<h3>Facebook</h3>
+							</header>
+							
+							<footer>
+								<a href="/myapp/facebook/" class="button">Enter</a>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</section>
+ -->
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<form action="/myapp/submit/" method="post">{% csrf_token %}
+
+						<div class="field half first">
+						
+							<input name="twitter" id="twitter" type="text" placeholder="Write an update for posting"><br>
+							<ul class="actions">
+							<li><input value="Post" class="button alt" type="submit"></li>
+						</ul>
+						</div>
+				</form>
+				</div>
+				</footer>
+			
+
+
+		
+		<!-- Scripts -->
+			<script src="/static/myapp/js/jquery.min.js"></script>
+			<script src="/static/myapp/js/skel.min.js"></script>
+			<script src="/static/myapp/js/util.js"></script>
+			<script src="/static/myapp/js/main.js"></script>
+
+	</body>
+</html>
